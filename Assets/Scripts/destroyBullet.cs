@@ -44,4 +44,12 @@ public class destroyBullet : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "enemy" || collision.collider)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

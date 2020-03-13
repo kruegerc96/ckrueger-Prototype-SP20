@@ -4,21 +4,39 @@ using UnityEngine;
 
 public class bulletShoot : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float shootForce = 1000f;
-    [SerializeField] float shotsPerSecond = 10;
+    [SerializeField] Rigidbody bullet;
+    [SerializeField] float bulletSpeed;
+    [SerializeField] float fireRate;
+    [SerializeField] GameObject bulletSpawn;
 
+    private float timeLastFired = 0f;
+    private bool firing = false;
+
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+       
+    }
+
+    void FixedUpdate()
+    {
+        float timeSinceLastFired = Time.time - timeLastFired;
+
+        //calculates true or false
+        bool canFire = timeSinceLastFired >= (1 / fireRate);
+
+        if (Input.GetButton("Fire1") && canFire)
         {
-            GameObject bullet = Instantiate(bulletPrefab, GameObject.("Bullet Spawn").transform.position, Quaternion.identity);
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
-            // A quaternion multiplied by a Vector applies that rotation to the Vector.
-            Vector3 direction = Quaternion.Euler(90, 0, 0) * transform.forward;
-
-            rb.velocity = transform.TransformDirection(Vector3.forward * 10);
+            BulletSpawn();
         }
+    }
+
+    void BulletSpawn()
+    {
+        Rigidbody instantiatedBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+
+        instantiatedBullet.velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
+
+        timeLastFired = Time.time;
     }
 }
