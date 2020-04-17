@@ -6,12 +6,15 @@ public class destroyBullet : MonoBehaviour
 {
     Material material;
     bool isFading = false;
-    [SerializeField] float fadeSpeed = 10f;
+
+    [SerializeField]
+    float fadeSpeed = 10f;
 
     void Start()
     {
         // Get the Renderer attached to this game object.
         Renderer renderer = GetComponent<Renderer>();
+
         // Get the material the renderer is using.
         material = renderer.material;
 
@@ -32,7 +35,7 @@ public class destroyBullet : MonoBehaviour
 
         if (isFading)
         {
-            // Generate the new, slightly more transparent color and apply it to the ball.
+            // Generate the new, slightly more transparent color and apply it
             float fadeAmount = fadeSpeed * Time.deltaTime;
             Color newColor = Color.Lerp(material.color, Color.clear, fadeAmount);
             material.color = newColor;
@@ -42,14 +45,6 @@ public class destroyBullet : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "enemy" || collision.collider)
-        {
-            Destroy(gameObject);
         }
     }
 }

@@ -15,11 +15,6 @@ public class bulletShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-    }
-
-    void FixedUpdate()
-    {
         float timeSinceLastFired = Time.time - timeLastFired;
 
         //calculates true or false
@@ -31,6 +26,7 @@ public class bulletShoot : MonoBehaviour
         }
     }
 
+    // 
     void BulletSpawn()
     {
         Rigidbody instantiatedBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);

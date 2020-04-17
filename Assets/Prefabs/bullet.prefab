@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 4933491548887519090}
   - component: {fileID: 8901056549813427762}
   - component: {fileID: 5692853805160217682}
-  - component: {fileID: -3839385155047763151}
+  - component: {fileID: 3616174054897917776}
   m_Layer: 8
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!96 &-3839385155047763151
+--- !u!96 &3616174054897917776
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5307310458386873600}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -167,13 +167,13 @@ TrailRenderer:
   m_Time: 5
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.2
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.11475372
         inSlope: 0
         outSlope: 0
         tangentMode: 0
