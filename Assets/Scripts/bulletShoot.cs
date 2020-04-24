@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bulletShoot : MonoBehaviour
 {
+    //variables
     [SerializeField] Rigidbody bullet;
     [SerializeField] float bulletSpeed;
     [SerializeField] float fireRate;
@@ -20,16 +21,17 @@ public class bulletShoot : MonoBehaviour
         //calculates true or false
         bool canFire = timeSinceLastFired >= (1 / fireRate);
 
+        //fire if Fire1 is pressed
         if (Input.GetButton("Fire1") && canFire)
         {
             BulletSpawn();
         }
     }
 
-    // 
-    void BulletSpawn()
+    //spawn bullet at specified point and launch it at specified velocity
+    public void BulletSpawn()
     {
-        Rigidbody instantiatedBullet = Instantiate(bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+        Rigidbody instantiatedBullet = Instantiate(bullet, this.bulletSpawn.transform.position, this.bulletSpawn.transform.rotation);
 
         instantiatedBullet.velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
 
