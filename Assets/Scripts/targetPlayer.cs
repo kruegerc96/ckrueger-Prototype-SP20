@@ -41,17 +41,15 @@ public class targetPlayer : MonoBehaviour
         RaycastHit hit;
 
         //specify that it needs to hit the PLAYER'S collider
-        if (Physics.Raycast(EnemyBulletSpawn.transform.position, EnemyBulletSpawn.transform.TransformDirection(Vector3.up), out hit, enemyTargetingRange) && (hit.collider == PlayerCollider))
+        if (Physics.Raycast(this.EnemyBulletSpawn.transform.position, this.EnemyBulletSpawn.transform.TransformDirection(Vector3.up), out hit, enemyTargetingRange) && (hit.collider == PlayerCollider))
         {
             Debug.DrawRay(EnemyBulletSpawn.transform.position, EnemyBulletSpawn.transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit player");
             
             canSeePlayer = true;
         }
         else
         {
             Debug.DrawRay(EnemyBulletSpawn.transform.position, EnemyBulletSpawn.transform.TransformDirection(Vector3.up) * 1000, Color.white);
-            Debug.Log("Did not Hit player");
 
             canSeePlayer = false;
         }
