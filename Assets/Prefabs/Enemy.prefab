@@ -761,7 +761,6 @@ GameObject:
   - component: {fileID: 5333212022427803477}
   - component: {fileID: 5333212022420417227}
   - component: {fileID: 5333212022420516075}
-  - component: {fileID: 5333212022420417224}
   - component: {fileID: 5333212022420417226}
   - component: {fileID: 5333212022420516074}
   m_Layer: 0
@@ -837,22 +836,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &5333212022420417224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5333212022420516073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8231fe6f74e3d16458be61adb675537e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTargetingRange: 75
-  target: {fileID: 0}
-  EnemyBulletSpawnTransform: {fileID: 0}
-  canSeePlayer: 0
 --- !u!114 &5333212022420417226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,6 +865,10 @@ MonoBehaviour:
   bulletSpeed: 200
   fireRate: 8
   EnemyBulletSpawn: {fileID: 5333212021331603894}
+  enemyTargetingRange: 0
+  target: {fileID: 0}
+  EnemyBulletSpawnTransform: {fileID: 0}
+  canSeePlayer: 0
 --- !u!1 &5333212022420516077
 GameObject:
   m_ObjectHideFlags: 0
