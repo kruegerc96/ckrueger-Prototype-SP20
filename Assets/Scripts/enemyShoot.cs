@@ -29,8 +29,6 @@ public class enemyShoot : MonoBehaviour
     {
         PlayerCollider = GameObject.Find("Player").GetComponent<CapsuleCollider>();
         PlayerCenterMass = GameObject.Find("CenterMass");
-
-        EnemyBulletSpawn = GameObject.Find("Enemy Bullet Spawn");
     }
 
     // Update is called once per frame
